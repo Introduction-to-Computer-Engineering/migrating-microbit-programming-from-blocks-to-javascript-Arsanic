@@ -1,0 +1,48 @@
+input.onButtonPressed(Button.A, function () {
+    radio.sendNumber(0)
+    music.playTone(147, music.beat(BeatFraction.Half))
+})
+input.onButtonPressed(Button.B, function () {
+    radio.sendNumber(1)
+    music.playTone(523, music.beat(BeatFraction.Half))
+})
+input.onButtonPressed(Button.AB, function () {
+    radio.sendNumber(2)
+    music.playTone(988, music.beat(BeatFraction.Half))
+})
+radio.onReceivedNumber(function (receivedNumber) {
+    if (receivedNumber == 0) {
+        basic.showLeds(`
+            . . . . .
+            . . . . .
+            . # # # .
+            . . . . .
+            . . . . .
+            `)
+    } else if (receivedNumber == 1) {
+        basic.showLeds(`
+            . . . . .
+            . # # # .
+            . # # # .
+            . # # # .
+            . . . . .
+            `)
+    } else if (receivedNumber == 2) {
+        basic.showLeds(`
+            # # # # #
+            # # # # #
+            # # # # #
+            # # # # #
+            # # # # #
+            `)
+    } else {
+        basic.showIcon(IconNames.Heart)
+    }
+    basic.pause(100)
+    basic.clearScreen()
+})
+radio.setGroup(1)
+basic.showString("morse")
+basic.forever(function () {
+
+})
