@@ -1,0 +1,63 @@
+input.onButtonPressed(Button.A, function () {
+    head = Math.randomBoolean()
+    tail = Math.randomBoolean()
+    p1_w = 0
+    p2_w = 0
+    basic.showLeds(`
+        . . . . .
+        . # . # .
+        . # . # .
+        # . . . #
+        . # # # .
+        `)
+})
+input.onGesture(Gesture.Shake, function () {
+    head = Math.randomBoolean()
+    tail = Math.randomBoolean()
+    if (head == tail) {
+        basic.showLeds(`
+            . . # . .
+            . # # # .
+            . # # # .
+            # # # # #
+            . # # # .
+            `)
+        basic.pause(100)
+        p1_w += 1
+    } else {
+        basic.showLeds(`
+            . # # # .
+            # . # . #
+            # # # # #
+            # . # . #
+            # . # . #
+            `)
+        basic.pause(100)
+        p2_w += 1
+    }
+    basic.showLeds(`
+        . # . # .
+        . # . # .
+        . . . . .
+        # . . . #
+        . # # # .
+        `)
+})
+let tail = false
+let head = false
+let p2_w = 0
+let p1_w = 0
+p1_w = 0
+p2_w = 0
+head = false
+tail = false
+basic.showLeds(`
+    . # . # .
+    . # . # .
+    . . . . .
+    # . . . #
+    . # # # .
+    `)
+basic.forever(function () {
+
+})
