@@ -1,0 +1,89 @@
+input.onGesture(Gesture.Shake, function () {
+    dice = Math.randomRange(0, 6)
+    if (dice == 1) {
+        basic.showLeds(`
+            . . . . .
+            . . . . .
+            . . # . .
+            . . . . .
+            . . . . .
+            `)
+    } else if (dice == 2) {
+        basic.showLeds(`
+            . . . . .
+            . . . . .
+            . # . # .
+            . . . . .
+            . . . . .
+            `)
+    } else if (dice == 3) {
+        basic.showLeds(`
+            . . . . .
+            . # . # .
+            . . . . .
+            . . # . .
+            . . . . .
+            `)
+    } else if (dice == 4) {
+        basic.showLeds(`
+            . . . . .
+            . # . # .
+            . . . . .
+            . # . # .
+            . . . . .
+            `)
+    } else if (dice == 5) {
+        basic.showLeds(`
+            . . . . .
+            . # . # .
+            . . # . .
+            . # . # .
+            . . . . .
+            `)
+    } else if (dice == 6) {
+        basic.showLeds(`
+            . # . # .
+            . . . . .
+            . # . # .
+            . . . . .
+            . # . # .
+            `)
+    } else {
+
+    }
+})
+let dice = 0
+for (let i = 0; i < 2; i++) {
+    led.plot(3, 2)
+    led.plot(3, 1)
+    led.plot(3, 0)
+    led.plot(1, 0)
+    led.plot(1, 1)
+    led.plot(1, 2)
+    led.plot(0, 3)
+    led.plot(1, 4)
+    led.plot(2, 4)
+    led.plot(3, 4)
+    led.plot(4, 3)
+    for (let i = 0; i < 4; i++) {
+        led.toggle(1, 1)
+        led.toggle(1, 2)
+        led.toggle(1, 0)
+        led.toggle(2, 0)
+        led.toggle(2, 1)
+        led.toggle(2, 2)
+        basic.pause(300)
+        led.toggle(2, 0)
+        led.toggle(2, 1)
+        led.toggle(2, 2)
+        led.toggle(3, 2)
+        led.toggle(3, 0)
+        led.toggle(3, 1)
+        basic.pause(300)
+    }
+}
+basic.clearScreen()
+dice = 0
+basic.forever(function () {
+
+})
