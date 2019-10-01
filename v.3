@@ -1,0 +1,94 @@
+input.onButtonPressed(Button.A, function () {
+    op_1_W += 1
+    basic.showLeds(`
+        . . . . #
+        . . . # .
+        . # # . .
+        . # # . .
+        # . . . .
+        `)
+    basic.clearScreen()
+})
+input.onButtonPressed(Button.B, function () {
+    op_2_W += 1
+    basic.showLeds(`
+        # . . . .
+        . # . . .
+        . . # # .
+        . . # # .
+        . . . . #
+        `)
+    basic.clearScreen()
+})
+input.onButtonPressed(Button.AB, function () {
+    ops_tie += 1
+    basic.showLeds(`
+        . # . . .
+        . # . . .
+        . # . . .
+        . # . . .
+        . # # # .
+        `)
+    basic.clearScreen()
+})
+input.onGesture(Gesture.Shake, function () {
+    basic.showString("W's")
+    basic.showLeds(`
+        . . . . #
+        . . . # .
+        . # # . .
+        . # # . .
+        # . . . .
+        `)
+    basic.showNumber(op_1_W)
+    basic.pause(500)
+    basic.showLeds(`
+        # . . . .
+        . # . . .
+        . . # # .
+        . . # # .
+        . . . . #
+        `)
+    basic.showNumber(op_2_W)
+    basic.pause(500)
+    basic.showString("L's")
+    basic.showNumber(ops_tie)
+    basic.pause(500)
+    basic.clearScreen()
+})
+let ops_tie = 0
+let op_2_W = 0
+let op_1_W = 0
+op_1_W = 0
+op_2_W = 0
+ops_tie = 0
+for (let i = 0; i < 1; i++) {
+    basic.showLeds(`
+        . . # . .
+        . # # . .
+        . . # . .
+        . . # . .
+        . # # # .
+        `)
+    basic.pause(1000)
+    basic.showLeds(`
+        . # # # .
+        . . . # .
+        . # # # .
+        . # . . .
+        . # # # .
+        `)
+    basic.pause(1000)
+    basic.showLeds(`
+        . # # # .
+        . . . # .
+        . # # # .
+        . . . # .
+        . # # # .
+        `)
+    basic.pause(1000)
+    basic.clearScreen()
+}
+basic.forever(function () {
+
+})
