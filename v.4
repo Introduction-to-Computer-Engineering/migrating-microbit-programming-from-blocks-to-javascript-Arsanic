@@ -1,0 +1,32 @@
+let icon = 0
+input.onGesture(Gesture.Shake, function () {
+    icon = Math.randomRange(0, 10)
+    if (icon == 0) {
+        basic.showLeds(`
+            # # # # #
+            # # # # #
+            # # # # #
+            # # # # #
+            # # # # #
+            `)
+    } else if (icon == 1) {
+        basic.showLeds(`
+            . . . . .
+            . # # # .
+            . # # # .
+            . # # # .
+            . . . . .
+            `)
+    } else {
+        basic.showLeds(`
+            # # . # #
+            # # . # #
+            . . # . .
+            . # . # .
+            # . . . #
+            `)
+    }
+})
+basic.forever(function () {
+
+})
