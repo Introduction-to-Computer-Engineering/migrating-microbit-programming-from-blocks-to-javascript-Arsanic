@@ -1,0 +1,10 @@
+basic.forever(function () {
+    for (let yid = 0; yid <= 4; yid++) {
+        for (let xid = 0; xid <= 4; xid++) {
+            led.plot(xid, yid)
+            basic.pause(200)
+            led.unplot(xid, yid)
+            basic.pause(200)
+        }
+    }
+})
